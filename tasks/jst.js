@@ -30,6 +30,8 @@ module.exports = function(grunt) {
 
     grunt.verbose.writeflags(options, 'Options');
 
+    if (options.template_filters) _.mixin(options.template_filters);
+
     var nsInfo;
     if (options.namespace !== false) {
       nsInfo = helpers.getNamespaceDeclaration(options.namespace);
